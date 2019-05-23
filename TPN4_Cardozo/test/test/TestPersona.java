@@ -14,7 +14,7 @@ class TestPersona {
 		String nombre = "Juan";
 		String apellido = "Gonzalez";
 		String dni = "12345678";
-		
+			
 		//Act
 		Persona p = new Persona (apellido, nombre, dni);
 		String actual1 = p.getApellido();
