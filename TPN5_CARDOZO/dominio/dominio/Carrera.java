@@ -4,12 +4,14 @@ public class Carrera {
 	private String nombre;
 	private String abreviatura;
 	private String plan;
-	private  Materia listadomateria[];
+	private  Materia listadomateria[] = new Materia [15];
+	private int indice=0;
 	
 	public Carrera(String nombre, String abreviatura, String plan) {
 		this.nombre= nombre;
 		this.abreviatura = abreviatura;
 		this.plan= plan;
+		this.listadomateria = new Materia[50];
 		
 		
 	}
@@ -74,13 +76,41 @@ public class Carrera {
 	}
 
 	public boolean addMateria(Materia m02) {
-		int i;
-		for(i=0;i<50;i++) {
-			if (listadomateria[i].getNombre().equals(nombre)) {
+		
+		if(indice == 50)
+			return false;
+		
+		if(indice == 0 ) {
+			listadomateria[indice] = m02;
+			indice++;
+			return true;
+		}
+		
+		for (int i = 0; i < indice; i++) {
+			if (listadomateria[i].equals(m02)) 
 				return false;
+		}
+		
+		listadomateria[indice] = m02;
+		indice++;
+		return true;
+	}
+
+	public Materia getMateria(AnioAcademico anioAcadeBusqueda) {
+		
+		return null;
+	}
+
+	public Materia[] getMaterias(AnioAcademico anio) {
+		int cont=0;
+		Materia [] materias = new Materia[3];
+		for (int i=0;i<indice;i++) {
+			if (listadomateria[i].getAnio() == anio) {
+				materias[cont]=listadomateria[i];
+				cont++;
 			}
 		}
-
+		return materias;
 	}
 	
 }

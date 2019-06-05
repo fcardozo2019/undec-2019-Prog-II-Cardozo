@@ -7,7 +7,7 @@ public class Materia {
 	
 	
 	public Materia(String nombre, String abreviatura, AnioAcademico anio) {
-		super();
+//		super();
 		this.nombre = nombre;
 		this.abreviatura = abreviatura;
 		this.anio = anio;
